@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificate Preview</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        embed {
+            width: 800px;
+            height: 600px;
+            border: none;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    
+    <embed src="{{ url_for('previewPage') }}"  />
+</body>
+</html>

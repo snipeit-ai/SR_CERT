@@ -1,0 +1,283 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator</title>
+    
+    <!-- Include Bootstrap CSS and JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Include necessary CSS and JavaScript files for the datepicker library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            font-weight: bold;
+        }
+        
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .submit {
+            display: inline-block;
+            padding: 10px 20px; /* Adjust padding to your preference */
+            background-color: #0037ff; /* Button background color */
+            color: #fff; /* Button text color */
+            text-decoration: none;
+            border-radius: 5px; /* Rounded corners */
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        
+        .btn-success {
+            background-color: #28a745;
+            border: none;
+        }
+        
+        .btn-success:hover {
+            background-color: #1d9238;
+        }
+    </style>
+</head>
+    <body>
+        <h1>Certificate Generator</h1>
+
+        <div class="container">
+            <div class="row">
+    
+                <form action="https://certificate-vercel-d5u2jo4lt-poornachandras-projects.vercel.app" method="POST" enctype="multipart/form-data">
+                    <div class="col-sm-10"> 
+
+                        <!-- Class of certificate -->
+                        <div class="form-group purple-border">
+                            <label for="comment">Type of Certificate:</label>
+                               <select class="form-control" rows="2" id="query7" name="query7" rows="2" cols="9" autofocus required>
+                                   <option value="1">IIP</option>
+                                   <option value="2">Deeksharambh</option>
+                                   <option value="3.1">Certificate courses-1</option>
+                                   <option value="3.2">Certificate courses-2</option>
+                                   <option value="4">SDP</option>
+                                   <option value="5.1">FDP-1</option>
+                                   <option value="5.2">FDP-2</option>
+                               </select>
+                       </div>
+
+                         <!-- CSV File -->
+                         <div class="form-group purple-border">
+                            <label for="csv_file">Student info CSV File:</label>
+                            <input type="file" class="form-control-file" id="csv_file" name="csv_file" required>
+                        </div>
+
+                        <!-- Query 1: Name of college -->
+                        <div class="form-group purple-border">
+                             <label for="comment">Name of college:</label>
+                                <select class="form-control" rows="2" id="query1" name="query1" rows="2" cols="9" autofocus required>
+                                    <option value="Acharya Bangalore Business School">Acharya Bangalore Business School</option>
+                                    <option value="Dhanwantari College of Education">Dhanwantari College of Education</option>
+                                    <option value="Mewa Vanguard Business School">Mewa Vanguard Business School</option>
+                                    <option value="Maharani Lakshmi Ammani College">Maharani Lakshmi Ammani College</option>
+                                    <option value="Malnad College of Engineering">Malnad College of Engineering</option>
+                                    <option value="Nagarjuna Institute of Management Studies">Nagarjuna Institute of Management Studies</option>
+                                    <option value="Padmashree Institute of technology">Padmashree Institute of technology</option>
+                                    <option value="Seshadripuram College">Seshadripuram College</option>
+                                    <option value="Soundarya Institute of Management and Science">Soundarya Institute of Management and Science</option>
+                                    <option value="Alliance Ascent">Alliance Ascent</option>
+                                </select>
+                        </div>
+
+                        <!-- College Logo Image -->
+                        <div class="form-group purple-border">
+                            <label for="college_logo">College Logo (png):</label>
+                            <input type="file" class="form-control-file" id="college_logo" name="college_logo" required>
+                        </div>
+
+                        <!-- Query 2: location-->
+                        <div class="form-group purple-border">
+                                <label for="comment">location:</label>
+                                <select class="form-control" rows="2" id="query2" name="query2" rows="2" cols="5" autofocus required>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Kengeri">Kengeri</option>
+                                </select>
+                        </div>
+                        <!-- Query 3: Type of certificate -->
+                        <div class="form-group purple-border">
+                            <label for="comment">Certificate Title:</label>
+                               <select class="form-control" rows="2" id="query3" name="query3" rows="2" cols="5" autofocus required>
+                                <option value="Completion">Completion</option>
+                                <option value="Participation">Participation</option>
+                                </select>
+                       </div>
+
+                        <!-- Query : start date -->
+                        <div class="form-group purple-border">
+                            <label for="startDate">Start Date:</label>
+                            <input type="text" class="form-control" id="startDate" name="startDate" autocomplete="off" oninput=validateDates() data-provide="datepicker" data-date-language="en" required value="{{ start_date }}">
+                        </div>
+
+                        <!-- Query : end date -->
+                        <div class="form-group purple-border">
+                            <label for="endDate">End Date:</label>
+                            <input type="text" class="form-control" id="endDate" name="endDate" autocomplete="off" oninput=validateDates() data-provide="datepicker" data-date-language="en" required value="{{ end_date }}">
+                        </div><br><br>
+                        
+
+                        <!-- Query 4: designation of primary college stakeholder -->
+                        <div class="form-group purple-border">
+                                <label for="comment" >Designation of Primary college stakeholder:</label>
+                                <textarea class="form-control" rows="2" id="query4" name="query4" rows="2" cols="8" autofocus required>{{query4}}</textarea>
+                        </div>
+                        <!-- Query : Digital Signature Image -->
+                        <div class="form-group purple-border">
+                            <label for="digital_signature1">Digital Signature Of Primary college stakeholder :</label>
+                            <input type="file" class="form-control-file" id="digital_signature1" name="digital_signature1">
+                        </div><br><br>
+
+                        <!-- Query 5: designation of college stakeholder -->
+                        <div class="form-group purple-border">
+                            <label for="comment">Designation of Secondary college stakeholder:</label>
+                            <textarea class="form-control" rows="2" id="query5" name="query5" rows="2" cols="8" autofocus>{{query5}}</textarea>
+                        </div>
+                        <!-- Query : Digital Signature Image -->
+                        <div class="form-group purple-border">
+                            <label for="digital_signature3">Digital Signature Of Secondary college stakeholder :</label>
+                            <input type="file" class="form-control-file" id="digital_signature3" name="digital_signature3" >
+                        </div><br><br>
+
+                        <!-- Query 6: designation of SME -->
+                        <div class="form-group purple-border">
+                            <label for="comment">Designation of SME :</label>
+                            <textarea class="form-control" rows="2" id="query6" name="query6" rows="2" cols="5" autofocus required>{{query6}}</textarea>
+                        </div>
+                        <!-- Query : Digital Signature Image -->
+                        <div class="form-group purple-border">
+                            <label for="digital_signature2">Digital Signature Of SME :</label>
+                            <input type="file" class="form-control-file" id="digital_signature2" name="digital_signature2" required>
+                        </div><br><br>
+
+                        <!-- College Logo Image -->
+                        <div class="form-group purple-border">
+                            <label for="background">Certificate Template:</label>
+                            <input type="file" class="form-control-file" id="Template" name="Template" >
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-3">
+                       <br><button type="submit" formaction="/preview">Preview</button><br><br>
+                        <button type="submit" formaction="/">Generate</button>
+                        
+                    </div>
+                    <!-- Download Button (Initially Hidden) -->
+                    <div class="form-group" id="downloadButton" style="display: none;">
+                        <a href="{{ url_for('loadPage') }}" class="btn btn-success" target="_blank">Download Certificates</a>
+                    </div>
+
+                
+                </form>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('#startDate, #endDate').datepicker({
+                    format: 'dd/mm/yyyy',
+                    autoclose: true
+                });
+            
+                $('#startDate, #endDate').on('changeDate', function () {
+                    validateDates();
+                });
+            });
+            
+            function validateDates() {
+                var startDate = moment(document.getElementById("startDate").value, 'DD/MM/YYYY');
+                var endDate = moment(document.getElementById("endDate").value, 'DD/MM/YYYY');
+                var validationMessage = document.getElementById("dateValidationMessage");
+            
+                if (!startDate.isValid() || !endDate.isValid()) {
+                    // Display an error message if the dates are not valid
+                    validationMessage.textContent = "Invalid date format. Please use dd/mm/yyyy.";
+                } else if (startDate >= endDate) {
+                    // Display an error message if start date is after or equal to end date
+                    validationMessage.textContent = "Start date must be before the end date";
+                } else {
+                    // Clear any existing error message
+                    validationMessage.textContent = "";
+                }
+            }
+            </script>
+        
+            <script>
+                    // When the form is submitted, show the download button
+                    $('#myForm').submit(function() {
+                    $('#downloadButton').show();
+                    });
+            </script>
+
+            <script>
+                // Add an event listener to the form submit button
+                document.getElementById("submit-button").addEventListener("click", function (e) {
+                    // Get the value of the "Designation of Secondary college stakeholder" field
+                    var designationValue = document.getElementById("query5").value;
+            
+                    // Get the value of the "Digital Signature Of Secondary college stakeholder" field
+                    var digitalSignatureValue = document.getElementById("digital_signature3").value;
+            
+                    // Check if the designation field is filled and digital signature field is empty
+                    if (designationValue.trim() !== "" && digitalSignatureValue.trim() === "") {
+                        alert("Please upload the Digital Signature Of Secondary college stakeholder.");
+                        e.preventDefault(); // Prevent form submission
+                    }
+                });
+            </script>
+
+            <!-- JavaScript to remember and store input in local storage on input change -->
+           <script>
+           
+            // Add event listeners to store input in local storage on input change for all fields
+            const inputElements = document.querySelectorAll('input[type="text"], textarea');
+            inputElements.forEach((element) => {
+                element.addEventListener('input', function () {
+                    localStorage.setItem(element.id, element.value);
+                });
+            });
+
+            // Retrieve and set the values from local storage
+            inputElements.forEach((element) => {
+                element.value = localStorage.getItem(element.id) || '';
+            });
+
+       </script>
+
+        </div>
+    </body>
+</html>    
