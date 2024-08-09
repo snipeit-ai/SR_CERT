@@ -16,10 +16,10 @@ from reportlab.pdfbase.ttfonts import TTFont
 
 
 def register_fonts():
-    font_path1 = r"Standard_inputs\\fonts\\Poppins-Regular.ttf"
+    font_path1 = r"Standard_inputs/fonts/Poppins-Regular.ttf"
     pdfmetrics.registerFont(TTFont('Poppins-Regular', font_path1))
 
-    font_path2 = r'Standard_inputs\\fonts\\Poppins-Bold.ttf'
+    font_path2 = r'Standard_inputs/fonts/Poppins-Bold.ttf'
     pdfmetrics.registerFont(TTFont('Poppins-Bold', font_path2))
     
 register_fonts()
@@ -55,7 +55,7 @@ class MyCanvas:
     def header(self,background_path):
         # Draw the background image (landscape)
         if background_path==None:
-            background_path="Standard_inputs\SRblank_template.jpg"    
+            background_path=r"Standard_inputs/SRblank_template.jpg"   
         self.canvas.drawImage(background_path, 0, 0, width=297*mm, height=210*mm)
 
     
@@ -96,7 +96,7 @@ class MyCanvas:
         frame.addFromList([keep_in_frame], self.canvas)
 
     def add_srlogo(self):
-        sr_logo = "Standard_inputs\srlogo.png"
+        sr_logo =  r"Standard_inputs/srlogo.png"
         sr_logo_width,sr_logo_height= image_resizer(sr_logo,100,120)
         sr_logo_x= 245*mm
         sr_logo_y=135*mm
